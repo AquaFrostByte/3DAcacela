@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>3D // Accela</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body class="layout-docked">
+        <div id="canvas-container"></div>
+
+        <div class="screen-fx"></div>
+
+        <svg id="svg-layer">
+            <line id="dynamic-line" x1="0" y1="0" x2="0" y2="0" />
+        </svg>
+
+        <div id="ui-layer">
+            <div id="left-bar">
+                <h1 class="vertical-title" id="display-title">Accela</h1>
+            </div>
+
+            <div id="right-panel">
+                <div id="line-anchor">
+                    <div class="anchor-dot" id="anchor-dot"></div>
+                    <div class="anchor-line-ext"></div>
+                </div>
+
+                <div class="panel-inner">
+                    <div class="stats-header" id="display-subtitle">FIELD ATLAS // OBJECT 00</div>
+                    <div class="stats-content" id="display-stats">
+                        ARCHIVIST READY
+
+                        We are in the midst of a new, uncharted era. The sythetic entities generated exhibit complex,
+
+                        > SYSTEM STATUS: NOMINAL
+                        > CLASS: NANO MECHANISM A-12
+                        > STRUCTURAL INTEGRITY: 99.1%
+                        > AWAITING MANUAL OVERRIDE...
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls-hint">
+            [ ARROW KEYS: Rotate ] <br> [ ESC: Settings ]
+        </div>
+
+        <div id="settings-menu">
+            <div class="text-xl border-b pb-2 mb-2 font-bold uppercase tracking-widset" style="border-color: var(--theme-color);">System Override Config</div>
+            
+            <div class="grid grid-cols-2 gap-4">
+                <div class="setting-group">
+                    <label>layout mode</label>
+                    <select id="layout-selectior">
+                        <option value="docked">Docked</option>
+                        <option value="floaing">Floating</option>
+                    </select>
+                </div>
+                <div class="setting-group">
+                    <label>theme color</label>
+                    <select id="theme-selector">
+                        <option value="#4ade80">Phosphor Green</option>
+                        <option value="#60a5fa">Terminal Blue</option>
+                        <option value="#fbbf24">Amber Monochrome</option>
+                        <option value="#f87171">Alert Red</option>
+                        <option value="#ffffff">Ghost White</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="setting-group">
+                <label>vetical title</label>
+                <input type="text" id="input-title" value="Accela">
+            </div>
+            <div class="setting-group">
+                <label>Terminal Body Text</label>
+                <textarea id="input-stats" rows="5">
+                    ARCHIVIST READY
+
+                    We are in the midst of a new, uncharted era. The synthetic entities generated exhibit complex, self-organizing geometries.
+
+                    > SYSTEM STATUS: NOMINAL
+                    > CLASS: NANO MECHANISM A-12
+                    > STRUCTURAL INTEGRITY: 99.1%
+                    > AWAITING MANUAL OVERRIDE...
+                </textarea>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <div class="setting-group">
+                    <label>rot sensitivity</label>
+                    <input type="range" id="range-speed" min="0.01" max="0.1" step="0.01" value="0.04">
+                </div>
+                <div class="setting-group">
+                    <label>scanline intensity</label>
+                    <input type="range" id="range-scanline" min="0" max="0.6" step="0.05" value="0.25">
+                </div>
+
+                <div class="text-xs text-center mt-2 opacity-60 uppercase">Press >>ESC<< to return</div>
+            </div>
+        </div>
+
+        <script src="main.js"></script>
+    </body>
+</html>
