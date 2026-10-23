@@ -5,12 +5,16 @@ You can use it for a presentation, a background or else u can come up with.
 
 ## Usage
 
-Just upload an 3D modle (TBD) and move around with the Arrow Keys.
+Just upload an 3D modle and move around with the Arrow Keys.
 Open the settings with ESC.
 
 ## Screenshots
 
 <<add here>>
+
+## Futer Plans
+
+I plan to add multi modle modes. :3
 
 ### Name
 

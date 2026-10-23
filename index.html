@@ -6,8 +6,11 @@
         <title>3D // Accela</title>
 
         <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.tailwindcss.com/3.4.17"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
     
         <link rel="stylesheet" href="styles.css">
     </head>
@@ -48,11 +51,11 @@
         </div>
 
         <div class="controls-hint">
-            [ ARROW KEYS: Rotate ] <br> [ ESC: Settings ]
+            [ ARROW KEYS: Rotate ] <br> [ ESC: Settings ] <br> [ FILE: Drop it ] <br> [ DRAG: Zoom ]
         </div>
 
         <div id="settings-menu">
-            <div class="text-xl border-b pb-2 mb-2 font-bold uppercase tracking-widset" style="border-color: var(--theme-color);">System Override Config</div>
+            <div class="text-xl border-b pb-2 mb-2 font-bold uppercase tracking-widest" style="border-color: var(--theme-color);">System Override Config</div>
             
             <div class="grid grid-cols-2 gap-4">
                 <div class="setting-group">
@@ -71,6 +74,30 @@
                         <option value="#f87171">Alert Red</option>
                         <option value="#ffffff">Ghost White</option>
                     </select>
+                </div>
+            </div>
+
+            <div class="setting-group model-group">
+                <label for="model-file">3D model</label>
+                <div class="model-row">
+                    <input type="file" id="model-file" accept=".glb,.gltf,.obj,.stl">
+                    <button type="button" id="model-reset">Default</button>
+                </div>
+                <div id="model-status">Showing built-in nano mechanism</div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <div class="setting-group">
+                    <label for="model-style">model render</label>
+                    <select id="model-style">
+                        <option value="wireframe">Wireframe</option>
+                        <option value="edges">Edges only</option>
+                        <option value="original">Original materials</option>
+                    </select>
+                </div>
+                <div class="setting-group">
+                    <label for="range-scale">model scale</label>
+                    <input type="range" id="range-scale" min="0.2" max="3" step="0.05" value="1">
                 </div>
             </div>
 
